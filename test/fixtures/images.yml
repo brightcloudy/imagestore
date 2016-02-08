@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  random_url: MyString
+  extension: MyString
+  upload_time: 2016-02-08 19:13:51
+
+two:
+  random_url: MyString
+  extension: MyString
+  upload_time: 2016-02-08 19:13:51
