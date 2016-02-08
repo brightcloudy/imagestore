@@ -8,7 +8,14 @@
 </head>
 <body>
 
-  <div class="container-fluid">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+      <%= render_navigation :expand_all => true, :renderer => :bootstrap %>
+    </div>
+  </nav>
+  <div class="container">
     <%= yield %>
   </div>
 

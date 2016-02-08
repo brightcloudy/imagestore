@@ -31,8 +31,10 @@ gem 'appsignal'
 gem 'twilio-ruby'
 
 gem 'simple_form'
+gem 'simple-navigation-bootstrap'
 gem 'paperclip'
 gem 'devise'
+gem 'devise-bootstrap-views'
 
 source 'https://rails-assets.org' do                                            
     gem 'rails-assets-tether', '>= 1.1.0'                                       

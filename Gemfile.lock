@@ -72,6 +72,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.7)
     dotenv (2.1.0)
     dotenv-rails (2.1.0)
       dotenv (= 2.1.0)
@@ -153,6 +154,11 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple-navigation (3.14.0)
+      activesupport (>= 2.3.2)
+    simple-navigation-bootstrap (1.0.2)
+      railties (>= 3.1)
+      simple-navigation (>= 3.7.0, < 4.0.0)
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
@@ -195,6 +201,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  devise-bootstrap-views
   dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -205,6 +212,7 @@ DEPENDENCIES
   rails-assets-tether (>= 1.1.0)!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple-navigation-bootstrap
   simple_form
   spring
   sprockets-rails (>= 2.3.2)
