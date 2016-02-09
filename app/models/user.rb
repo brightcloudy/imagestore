@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, styles: { big: "250x250#", thumbnail: "60x60#"}
   validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/png", "image/jpg"] }
+
+  has_many :images
 end

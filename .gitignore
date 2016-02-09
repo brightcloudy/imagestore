@@ -13,6 +13,7 @@
 /tmp
 
 /public/assets/*.(json|js|css|gz)
+/public/system
 .env
 *.swp
 .*.swp
