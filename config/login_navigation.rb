@@ -5,7 +5,7 @@ SimpleNavigation::Configuration.run do |navigation|
       primary.item :signup, "Sign Up", new_user_registration_path
     else
       primary.item :cur_user, current_user.email do |actions|
-        actions.item :edit_pwd, 'Edit Password', edit_user_password_path 
+        actions.item :edit_pwd, 'Edit Password', edit_user_registration_path
         actions.item :edit_numbers, 'Edit Phone Numbers', phone_number_index_path
         actions.item :logout, 'Logout', destroy_user_session_path, :method => :delete
       end
