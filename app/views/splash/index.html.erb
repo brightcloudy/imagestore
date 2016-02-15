@@ -1,7 +1,12 @@
 <% provide(:title, "Welcome") %>
 <div class="jumbotron">
-  <h1>Hello World</h1>
+  <h1>ImgStore</h1>
+  <h3>MMS image uploading + image storage</h3>
   <p>
-    Dolor soluta dolores iusto quia adipisci veritatis accusamus eligendi. Quo veniam possimus veniam blanditiis perspiciatis. Mollitia ab eaque eos dolore.
+    <% if user_signed_in? %>
+      <%= link_to 'Upload', '/image/new', class: "btn btn-lg btn-primary" %>
+    <% else %>
+      <%= link_to 'Sign up!', '/users/sign_up', class: "btn btn-lg btn-primary" %>
+    <% end %>
   </p>
 </div>

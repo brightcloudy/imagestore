@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   validates_attachment :avatar, content_type: { content_type: ["image/jpeg", "image/png", "image/jpg"] }
 
   has_many :images
+  has_many :phone_numbers
 end

@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table table-striped">
+      <tr>
+        <td>#</td>
+        <td>Phone Number</td>
+        <td>Delete</td>
+      </tr>
+      <% if @numbers.empty? %>
+        <tr>
+          <h5 class="text-center">No phone numbers currently associated with this account.</h5>
+        </tr>
+      <% else %>
+        <% @numbers.each_with_index do |num, idx| %>
+          <tr>
+            <td><%= idx %></td>
+            <td><%= num.number %></td>
+            <td><%= link_to 'Delete', "/phone_number/#{num.id}", :method => :delete, class: "btn btn-sm btn-danger" %></td>
+          </tr>
+        <% end %>
+      <% end %>
+      <%= form_for @new_number, url: phone_number_index_path, :method => :post, class: "form-inline" do |f| %>
+      <tr>
+        <td></td>
+        <div class="form-group">
+          <td>
+            <%= f.text_field :number, class: "form-control", placeholder: "+15551234567" %>
+          </td>
+        </div>
+        <td>
+          <%= f.submit "Add Number", class: "btn btn-primary" %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>

@@ -14,7 +14,7 @@ class TwilioController < ApplicationController
   end
 
   def sms
-    user = User.find_by(phone_number: params['From'])
+    user = User.find_by(user_id: PhoneNumber.find_by(number: params['From']).first.user_id)
     if user.nil?
       response = Twilio::TwiML::Response.new do |r|
         r.Message "Unrecognized phone number!"

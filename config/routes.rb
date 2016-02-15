@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   delete 'image/:random_url', to: 'image#destroy'
   get 'images', to: 'image#index'
 
+  resources :phone_number, only: [:index, :create, :destroy]
+
   post 'twilio/voice_call' => 'twilio#voice_call'
   post 'twilio/sms' => 'twilio#sms'
   # The priority is based upon order of creation: first created -> highest priority.
