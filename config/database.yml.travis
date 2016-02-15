@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: imagestore_test
+  username: postgres

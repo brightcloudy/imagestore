@@ -37,6 +37,12 @@ gem 'open_uri_redirections'
 gem 'devise'
 gem 'devise-bootstrap-views'
 
+gem 'rspec'
+gem 'rspec-rails'
+gem 'capybara'
+gem 'factory_girl_rails'
+#gem 'cucumber-rails', :require => false
+#gem 'database_cleaner'
 source 'https://rails-assets.org' do                                            
     gem 'rails-assets-tether', '>= 1.1.0'                                       
 end                                                                             
