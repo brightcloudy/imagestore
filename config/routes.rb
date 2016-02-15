@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 
   resources :image, except: [:show, :index, :destroy]
   get 'image/:random_url', to: 'image#show'
+  get 'image/:random_url/med', to: 'image#view_med'
+  get 'image/:random_url/xxl', to: 'image#view_xxl'
+  get 'image/:random_url/xl', to: 'image#view_xl'
+  get 'image/:random_url/lg', to: 'image#view_lg'
+  get 'image/:random_url/sm', to: 'image#view_sm'
+  get 'image/:random_url/thumb', to: 'image#view_thumb'
   delete 'image/:random_url', to: 'image#destroy'
   get 'images', to: 'image#index'
 
@@ -11,6 +17,7 @@ Rails.application.routes.draw do
 
   post 'twilio/voice_call' => 'twilio#voice_call'
   post 'twilio/sms' => 'twilio#sms'
+  post 'twilio/send_mms' => 'twilio#send_mms'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

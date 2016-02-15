@@ -35,4 +35,34 @@ class ImageController < ApplicationController
     redirect_to images_path
   end
 
+  def view_med
+    @image = Image.find_by(random_url: params[:random_url])
+    send_file @image.document.path(:medium), type: @image.document_content_type, disposition: 'inline'
+  end
+
+  def view_xxl
+    @image = Image.find_by(random_url: params[:random_url])
+    send_file @image.document.path(:largest), type: @image.document_content_type, disposition: 'inline'
+  end
+
+  def view_xl
+    @image = Image.find_by(random_url: params[:random_url])
+    send_file @image.document.path(:xlarge), type: @image.document_content_type, disposition: 'inline'
+  end
+
+  def view_lg
+    @image = Image.find_by(random_url: params[:random_url])
+    send_file @image.document.path(:large), type: @image.document_content_type, disposition: 'inline'
+  end
+
+  def view_sm
+    @image = Image.find_by(random_url: params[:random_url])
+    send_file @image.document.path(:small), type: @image.document_content_type, disposition: 'inline'
+  end
+
+  def view_thumb
+    @image = Image.find_by(random_url: params[:random_url])
+    send_file @image.document.path(:thumbnail), type: @image.document_content_type, disposition: 'inline'
+  end
+
 end

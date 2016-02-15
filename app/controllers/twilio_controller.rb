@@ -44,4 +44,18 @@ class TwilioController < ApplicationController
     render_twiml response
   end
 
+  def send_mms
+    if !user_signed_in?
+      return
+    end
+    @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+    @client.account.messages.create({
+      :from => '+12672744480',
+      :to => params[:phone_number][:number],
+      :body => "Image sent by http://imgstr.xyz/",
+      :media_url => params[:phone_number][:imageurl]
+    })
+    flash[:success] = "MMS sent!"
+    redirect_to :back
+  end
 end

@@ -2,19 +2,28 @@
 <div class="row">
   <div class="col-md-4 col-md-offset-4">
     <div class="thumbnail">
-      <a href="<%= @image.document.url(:largest) %>"><%= image_tag(@image.document.url(:medium), class: "img-responsive img-rounded center-block") %></a>
+      <a href="<%= "/image/#{@image.random_url}/xxl" %>"><%= image_tag(@image.document.url(:medium), class: "img-responsive img-rounded center-block") %></a>
       <div class="caption">
         <p class="text-center">
-          <%= link_to "XXL", @image.document.url(:largest), class: "btn btn-xs btn-primary" %>
-          <%= link_to "XL", @image.document.url(:xlarge), class: "btn btn-xs btn-primary" %>
-          <%= link_to "L", @image.document.url(:large), class: "btn btn-xs btn-primary" %>
-          <%= link_to "M", @image.document.url(:medium), class: "btn btn-xs btn-primary" %>
-          <%= link_to "S", @image.document.url(:small), class: "btn btn-xs btn-primary" %>
-          <%= link_to "Thumb", @image.document.url(:thumbnail), class: "btn btn-xs btn-primary" %>
+          <%= link_to "XXL", "/image/#{@image.random_url}/xxl", class: "btn btn-xs btn-primary" %>
+          <%= link_to "XL", "/image/#{@image.random_url}/xl", class: "btn btn-xs btn-primary" %>
+          <%= link_to "L", "/image/#{@image.random_url}/lg", class: "btn btn-xs btn-primary" %>
+          <%= link_to "M", "/image/#{@image.random_url}/med", class: "btn btn-xs btn-primary" %>
+          <%= link_to "S", "/image/#{@image.random_url}/sm", class: "btn btn-xs btn-primary" %>
+          <%= link_to "Thumb", "/image/#{@image.random_url}/thumb", class: "btn btn-xs btn-primary" %>
         </p>
         <h5> Original File Name: <%= @image.document_file_name %></h5>
         <h5 class="text-muted">Uploaded on <%= @image.created_at.getlocal("-05:00").strftime("%c EST") %></h5>
         <%= link_to "Delete Image", "/image/#{@image.random_url}", :method => :delete, class: "btn btn-sm btn-danger center-block" %>
+        <br>
+        <%= form_for :phone_number, url: '/twilio/send_mms', :method => :post, class: "form-inline" do |f| %>
+          <%= f.hidden_field 'imageurl', value: remote_url("/image/#{@image.random_url}/med") %>
+          <div class="form-group text-center">
+            <%= f.select :number, options_from_collection_for_select(PhoneNumber.where("user_id = ?", current_user.id), 'number', 'number'), class: "form-inline" %>
+            <%= f.submit "Send MMS", url: '/twilio/send_mms', class: "btn btn-primary" %>
+          </div>
+        <% end %>
+
       </div>
     </div>
   </div>
