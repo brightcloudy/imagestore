@@ -1,4 +1,5 @@
 # ImgStore Rails App
+[![Build Status](https://travis-ci.org/brightcloudy/imagestore.svg?branch=master)](https://travis-ci.org/brightcloudy/imagestore)
 
 Okay so here's how it goes when you want to set up this rails application in a production environment!
 
