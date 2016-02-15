@@ -102,6 +102,7 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    open_uri_redirections (0.2.1)
     orm_adapter (0.5.0)
     paperclip (4.3.4)
       activemodel (>= 3.2.0)
@@ -205,6 +206,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
+  open_uri_redirections
   paperclip
   pg
   puma

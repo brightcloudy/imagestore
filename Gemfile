@@ -33,6 +33,7 @@ gem 'twilio-ruby'
 gem 'simple_form'
 gem 'simple-navigation-bootstrap'
 gem 'paperclip'
+gem 'open_uri_redirections'
 gem 'devise'
 gem 'devise-bootstrap-views'
 

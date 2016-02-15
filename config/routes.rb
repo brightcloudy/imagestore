@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root 'splash#index'
 
-  resources :image, except: :show
+  resources :image, except: [:show, :index, :destroy]
   get 'image/:random_url', to: 'image#show'
+  delete 'image/:random_url', to: 'image#destroy'
+  get 'images', to: 'image#index'
 
   post 'twilio/voice_call' => 'twilio#voice_call'
+  post 'twilio/sms' => 'twilio#sms'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

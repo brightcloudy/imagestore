@@ -1,5 +1,5 @@
 class ImageController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :index]
 
   def new
     @image = Image.new
@@ -21,4 +21,18 @@ class ImageController < ApplicationController
   def show
     @image = Image.find_by(random_url: params[:random_url])
   end
+
+  def index
+    @images = Image.where("user_id = ?", current_user.id)
+  end
+
+  def destroy
+    @image = Image.find_by(random_url: params[:random_url])
+    @image.destroy
+
+    flash[:success] = "Image #{params[:random_url]} deleted successfully."
+
+    redirect_to images_path
+  end
+
 end
