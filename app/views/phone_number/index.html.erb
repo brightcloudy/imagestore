@@ -13,7 +13,7 @@
       <% else %>
         <% @numbers.each_with_index do |num, idx| %>
           <tr>
-            <td><%= idx %></td>
+            <td><%= idx+1 %></td>
             <td><%= num.number %></td>
             <td><%= link_to 'Delete', "/phone_number/#{num.id}", :method => :delete, class: "btn btn-sm btn-danger" %></td>
           </tr>
@@ -28,7 +28,7 @@
           </td>
         </div>
         <td>
-          <%= f.submit "Add Number", class: "btn btn-primary" %>
+          <%= f.submit "Add Number", url: phone_number_index_path, class: "btn btn-primary" %>
         </td>
       </tr>
     <% end %>
