@@ -82,5 +82,6 @@ test:
 production:
   <<: *default
   database: imagestore_production
-  username: imagestore
+  username: postgres
+  host: localhost
   password: <%= ENV['IMAGESTORE_DATABASE_PASSWORD'] %>
