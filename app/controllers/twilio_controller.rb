@@ -8,7 +8,7 @@ class TwilioController < ApplicationController
   def voice_call
     response = Twilio::TwiML::Response.new do |r|
       r.Say 'Thank you for calling the Image Store MMS Number. To use this service, please visit our website and add your phone number to your account. You can then send MMS messages to this number to upload images.', :voice => 'alice'
-      r.Play 'http://imgstr.xyz/public/audio/hold.mp3', :loop => 0
+      r.Play 'http://imgstr.xyz/audio/hold.mp3', :loop => 0
     end
 
     render_twiml response
